@@ -53,49 +53,43 @@ export default function RequestExport() {
         setErrorMessage('')
 
         try {
-            const submitData = {
-                ...formData,
-                subject: 'Export Inquiry',
-                message: `
-Business Type: ${formData.businessType}
-Interested Products: ${formData.interestedProducts.join(', ') || 'All Products'}
-Estimated Order Quantity: ${formData.estimatedOrderQuantity}
+            // Format message for WhatsApp
+            const whatsappMessage = `*🌿 EXPORT INQUIRY - Bees Line Exports*\n\n` +
+                `*Name:* ${formData.name}\n` +
+                `*Email:* ${formData.email}\n` +
+                `*Phone:* ${formData.phone}\n` +
+                `*Company:* ${formData.company}\n` +
+                `*Country:* ${formData.country}\n` +
+                `*Business Type:* ${formData.businessType}\n` +
+                `*Interested Products:* ${formData.interestedProducts.join(', ') || 'All Products'}\n` +
+                `*Estimated Order Quantity:* ${formData.estimatedOrderQuantity}\n\n` +
+                `*Message:*\n${formData.message}`
 
-Message:
-${formData.message}
-        `.trim()
-            }
-
-            const response = await fetch('/php/contact.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(submitData)
+            // WhatsApp number (Sri Lankan number: 94777182110)
+            const whatsappNumber = '94777182110'
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank')
+            
+            // Show success message
+            setSubmitStatus('success')
+            
+            // Reset form
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                country: '',
+                businessType: 'Distributor',
+                interestedProducts: [],
+                estimatedOrderQuantity: '',
+                message: ''
             })
-
-            const data = await response.json()
-
-            if (data.success) {
-                setSubmitStatus('success')
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    company: '',
-                    country: '',
-                    businessType: 'Distributor',
-                    interestedProducts: [],
-                    estimatedOrderQuantity: '',
-                    message: ''
-                })
-            } else {
-                setSubmitStatus('error')
-                setErrorMessage(data.message || 'Something went wrong. Please try again.')
-            }
         } catch (error) {
             setSubmitStatus('error')
-            setErrorMessage('Failed to send inquiry. Please try again later.')
+            setErrorMessage('Failed to open WhatsApp. Please try again later.')
             console.error('Form submission error:', error)
         } finally {
             setIsSubmitting(false)
