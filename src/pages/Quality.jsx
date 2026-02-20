@@ -80,28 +80,33 @@ export default function Quality() {
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {qualityCommitments.map((commitment, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow"
-                            >
-                                <div className="flex items-start gap-4">
-                                    <div className="text-5xl flex-shrink-0">{commitment.icon}</div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            {commitment.title}
-                                        </h3>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            {commitment.description}
-                                        </p>
+                        {qualityCommitments.map((commitment, index) => {
+                            const Icon = commitment.icon
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow"
+                                >
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 text-gold">
+                                            <Icon size={48} strokeWidth={1.5} />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">
+                                                {commitment.title}
+                                            </h3>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                {commitment.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>

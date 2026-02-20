@@ -107,7 +107,9 @@ export default function Products() {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-center py-16"
                         >
-                            <div className="text-6xl mb-4">🔍</div>
+                            <div className="mb-4 text-gray-400 flex justify-center">
+                                <SearchX size={64} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-2xl font-semibold text-gray-900 mb-2">No products found</h3>
                             <p className="text-gray-600 mb-6">Try adjusting your search or filter to find what you're looking for.</p>
                             <button
@@ -141,7 +143,9 @@ export default function Products() {
                             viewport={{ once: true }}
                             className="bg-white rounded-xl p-6 shadow-md"
                         >
-                            <div className="text-4xl mb-3">✓</div>
+                            <div className="mb-3 text-gold flex justify-center">
+                                <CheckCircle size={40} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">GMP Certified</h3>
                             <p className="text-gray-600 text-sm">All products manufactured under strict quality standards</p>
                         </motion.div>
@@ -153,7 +157,9 @@ export default function Products() {
                             transition={{ delay: 0.1 }}
                             className="bg-white rounded-xl p-6 shadow-md"
                         >
-                            <div className="text-4xl mb-3">📦</div>
+                            <div className="mb-3 text-gold flex justify-center">
+                                <Package size={40} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Export Ready</h3>
                             <p className="text-gray-600 text-sm">Available for bulk orders with international shipping</p>
                         </motion.div>
@@ -165,7 +171,9 @@ export default function Products() {
                             transition={{ delay: 0.2 }}
                             className="bg-white rounded-xl p-6 shadow-md"
                         >
-                            <div className="text-4xl mb-3">🌿</div>
+                            <div className="mb-3 text-gold flex justify-center">
+                                <Leaf size={40} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">100% Natural</h3>
                             <p className="text-gray-600 text-sm">Pure herbal ingredients with no artificial additives</p>
                         </motion.div>

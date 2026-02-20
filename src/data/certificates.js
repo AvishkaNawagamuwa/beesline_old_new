@@ -1,3 +1,4 @@
+import { Sprout, Building2, FlaskConical, Package } from 'lucide-react'
 import images from '../assets/images'
 
 // Certificate data for Bees Line Exports
@@ -70,22 +71,22 @@ export const certificates = [
 // Quality commitments
 export const qualityCommitments = [
     {
-        icon: '🏭',
+        icon: Building2,
         title: 'GMP-Aligned Processes',
         description: 'All manufacturing follows Good Manufacturing Practice guidelines, ensuring consistent product quality from raw materials to finished goods.'
     },
     {
-        icon: '🔬',
+        icon: FlaskConical,
         title: 'HACCP-Based Food Safety Controls',
         description: 'Comprehensive hazard analysis at critical control points throughout the production process to prevent contamination and ensure safety.'
     },
     {
-        icon: '🧪',
+        icon: Sprout,
         title: 'Lab Testing for Purity & Quality',
         description: 'Every batch undergoes rigorous laboratory testing for purity, potency, and safety before receiving clearance for export.'
     },
     {
-        icon: '📦',
+        icon: Package,
         title: 'Traceable Sourcing & Export-Ready Packaging',
         description: 'Complete supply chain transparency with traceable ingredients and packaging designed to meet international export requirements.'
     }

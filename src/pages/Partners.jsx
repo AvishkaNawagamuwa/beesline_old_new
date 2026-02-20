@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { DollarSign, Package, Target, Handshake, ClipboardList, Star } from 'lucide-react'
 import Hero from '../components/Hero'
 
 export default function Partners() {
@@ -30,49 +31,54 @@ export default function Partners() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: '💰',
+                                icon: DollarSign,
                                 title: 'Competitive Margins',
                                 desc: 'Direct export pricing gives you strong profit margins while maintaining premium quality products.'
                             },
                             {
-                                icon: '📦',
+                                icon: Package,
                                 title: 'Reliable Supply',
                                 desc: 'Consistent product availability and timely delivery to keep your business running smoothly.'
                             },
                             {
-                                icon: '🎯',
+                                icon: Target,
                                 title: 'Exclusive Products',
                                 desc: 'Access to authentic Sri Lankan herbal products that stand out in your market.'
                             },
                             {
-                                icon: '🤝',
+                                icon: Handshake,
                                 title: 'Dedicated Support',
                                 desc: 'Personal account manager and ongoing support to help grow your business.'
                             },
                             {
-                                icon: '📋',
+                                icon: ClipboardList,
                                 title: 'Complete Documentation',
                                 desc: 'All export papers, certificates, and compliance documents handled professionally.'
                             },
                             {
-                                icon: '🌟',
+                                icon: Star,
                                 title: 'Quality Assurance',
                                 desc: 'GMP-certified products that meet international standards and customer expectations.'
                             }
-                        ].map((benefit, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-beige/30 rounded-xl p-8 hover:shadow-xl transition-shadow"
-                            >
-                                <div className="text-5xl mb-4">{benefit.icon}</div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                                <p className="text-gray-700 leading-relaxed">{benefit.desc}</p>
-                            </motion.div>
-                        ))}
+                        ].map((benefit, index) => {
+                            const Icon = benefit.icon
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="bg-beige/30 rounded-xl p-8 hover:shadow-xl transition-shadow"
+                                >
+                                    <div className="mb-4 text-gold">
+                                        <Icon size={48} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+                                    <p className="text-gray-700 leading-relaxed">{benefit.desc}</p>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>

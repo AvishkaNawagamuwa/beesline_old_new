@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { SearchX, Leaf, CheckCircle } from 'lucide-react'
 import { getProductBySlug } from '../data/products'
 
 export default function ProductDetails() {
@@ -11,7 +12,9 @@ export default function ProductDetails() {
         return (
             <div className="pt-24 pb-16 min-h-screen flex items-center justify-center">
                 <div className="text-center">
-                    <div className="text-6xl mb-4">🔍</div>
+                    <div className="mb-4 text-gray-400 flex justify-center">
+                        <SearchX size={64} strokeWidth={1.5} />
+                    </div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
                     <Link to="/products" className="btn-primary">
                         Back to Products
@@ -108,12 +111,16 @@ export default function ProductDetails() {
                             {/* Quick Info Cards */}
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                                    <div className="text-green-600 text-2xl mb-2">✓</div>
+                                    <div className="text-green-600 mb-2">
+                                        <CheckCircle size={24} strokeWidth={1.5} />
+                                    </div>
                                     <h4 className="font-semibold text-gray-900 mb-1">GMP Certified</h4>
                                     <p className="text-sm text-gray-600">Quality assured</p>
                                 </div>
                                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                                    <div className="text-blue-600 text-2xl mb-2">🌿</div>
+                                    <div className="text-blue-600 mb-2">
+                                        <Leaf size={24} strokeWidth={1.5} />
+                                    </div>
                                     <h4 className="font-semibold text-gray-900 mb-1">100% Natural</h4>
                                     <p className="text-sm text-gray-600">Pure ingredients</p>
                                 </div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Target, Star, Leaf, Globe, Lightbulb, GraduationCap, Handshake } from 'lucide-react'
 import Hero from '../components/Hero'
 import images from '../assets/images'
 
@@ -70,7 +71,9 @@ export default function About() {
                             viewport={{ once: true }}
                             className="bg-white rounded-2xl p-8 shadow-lg"
                         >
-                            <div className="text-4xl mb-4">🎯</div>
+                            <div className="mb-4 text-gold">
+                                <Target size={40} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 To export premium Sri Lankan herbal and Ayurvedic products to global markets while maintaining the highest standards of quality, authenticity, and ethical business practices.
@@ -87,7 +90,9 @@ export default function About() {
                             transition={{ delay: 0.1 }}
                             className="bg-white rounded-2xl p-8 shadow-lg"
                         >
-                            <div className="text-4xl mb-4">🌟</div>
+                            <div className="mb-4 text-gold">
+                                <Star size={40} strokeWidth={1.5} />
+                            </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 To establish Sri Lankan herbal products as a globally recognized category of premium wellness solutions, making authentic Ayurvedic remedies accessible to people worldwide.
@@ -117,49 +122,54 @@ export default function About() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: '⭐',
+                                icon: Star,
                                 title: 'Quality First',
                                 desc: 'We never compromise on product quality. Every item is sourced from GMP-certified manufacturers and undergoes rigorous testing before export.'
                             },
                             {
-                                icon: '🤝',
+                                icon: Handshake,
                                 title: 'Trust & Transparency',
                                 desc: 'Honesty in all dealings, clear communication, and building long-term relationships based on mutual respect and reliability.'
                             },
                             {
-                                icon: '🌿',
+                                icon: Leaf,
                                 title: 'Authenticity',
                                 desc: 'Preserving traditional formulations while ensuring products meet modern safety and efficacy standards. No shortcuts, no substitutes.'
                             },
                             {
-                                icon: '🌍',
+                                icon: Globe,
                                 title: 'Global Responsibility',
                                 desc: 'Ethical sourcing, sustainable practices, and contributing to the wellness of communities worldwide.'
                             },
                             {
-                                icon: '💡',
+                                icon: Lightbulb,
                                 title: 'Innovation',
                                 desc: 'Continuously improving our processes, packaging, and service to meet evolving market needs while respecting tradition.'
                             },
                             {
-                                icon: '🎓',
+                                icon: GraduationCap,
                                 title: 'Customer Success',
                                 desc: 'Your success is our success. We provide the support, quality, and consistency you need to grow your business.'
                             }
-                        ].map((value, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-beige/30 rounded-xl p-6 hover:shadow-lg transition-shadow"
-                            >
-                                <div className="text-4xl mb-4">{value.icon}</div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                                <p className="text-gray-700 leading-relaxed">{value.desc}</p>
-                            </motion.div>
-                        ))}
+                        ].map((value, index) => {
+                            const Icon = value.icon
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="bg-beige/30 rounded-xl p-6 hover:shadow-lg transition-shadow"
+                                >
+                                    <div className="mb-4 text-gold">
+                                        <Icon size={40} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+                                    <p className="text-gray-700 leading-relaxed">{value.desc}</p>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>

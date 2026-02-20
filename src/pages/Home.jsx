@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Leaf, BadgeCheck, Globe, Target, Package, DollarSign, ScrollText, Microscope, Star } from 'lucide-react'
 import HeroCarousel from '../components/HeroCarousel'
 import FeaturedProductsCarousel from '../components/FeaturedProductsCarousel'
 import CertificationCarousel from '../components/CertificationCarousel'
@@ -136,33 +137,38 @@ export default function Home() {
                     >
                         {[
                             {
-                                icon: '🌿',
+                                icon: Leaf,
                                 title: 'Herbal Expertise',
                                 desc: "Rooted in Sri Lanka's centuries-old Ayurvedic tradition, we combine ancient wellness knowledge with cutting-edge manufacturing excellence."
                             },
                             {
-                                icon: '✅',
+                                icon: BadgeCheck,
                                 title: 'Certified Quality',
                                 desc: 'GMP-certified manufacturing and international compliance standards ensure every product meets the highest global safety and efficacy requirements.'
                             },
                             {
-                                icon: '🌍',
+                                icon: Globe,
                                 title: 'Export & Partnerships',
                                 desc: 'We build lasting relationships with international distributors, offering competitive pricing, reliable support, and consistent availability.'
                             }
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={cardVariants}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                                className="bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 relative overflow-hidden group border border-gray-100"
-                            >
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full -mr-8 -mt-8 group-hover:scale-150 transition-transform duration-500"></div>
-                                <div className="text-5xl mb-6 relative z-10">{item.icon}</div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{item.title}</h3>
-                                <p className="text-gray-600 leading-relaxed relative z-10">{item.desc}</p>
-                            </motion.div>
-                        ))}
+                        ].map((item, index) => {
+                            const Icon = item.icon
+                            return (
+                                <motion.div
+                                    key={index}
+                                    variants={cardVariants}
+                                    whileHover={{ y: -8, scale: 1.02 }}
+                                    className="bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 relative overflow-hidden group border border-gray-100"
+                                >
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full -mr-8 -mt-8 group-hover:scale-150 transition-transform duration-500"></div>
+                                    <div className="mb-6 relative z-10 text-gold">
+                                        <Icon size={48} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{item.title}</h3>
+                                    <p className="text-gray-600 leading-relaxed relative z-10">{item.desc}</p>
+                                </motion.div>
+                            )
+                        })}
                     </motion.div>
                 </div>
             </section>
@@ -232,25 +238,30 @@ export default function Home() {
                         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
                     >
                         {[
-                            { icon: '🎯', title: 'Authentic Products', desc: 'Sourced directly from Sri Lankan farms and manufacturers, ensuring genuine quality and traditional formulations.' },
-                            { icon: '📦', title: 'Reliable Supply Chain', desc: 'Consistent product availability with efficient logistics and timely international delivery.' },
-                            { icon: '💰', title: 'Competitive Pricing', desc: 'Direct export prices that give you strong margins while maintaining premium quality.' },
-                            { icon: '📜', title: 'Complete Documentation', desc: 'All necessary export papers, certificates, and compliance documents provided.' },
-                            { icon: '🔬', title: 'Lab Tested', desc: 'Every batch undergoes rigorous quality testing to ensure safety and effectiveness.' },
-                            { icon: '🌟', title: 'Ongoing Support', desc: 'Dedicated account management and technical support for all our distribution partners.' }
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={cardVariants}
-                                whileHover={{ y: -8, scale: 1.03 }}
-                                className="bg-beige/30 rounded-xl p-6 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <div className="text-4xl mb-4 relative z-10 transform group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                                <h4 className="text-xl font-semibold text-gray-900 mb-3 relative z-10">{item.title}</h4>
-                                <p className="text-gray-700 relative z-10">{item.desc}</p>
-                            </motion.div>
-                        ))}
+                            { icon: Target, title: 'Authentic Products', desc: 'Sourced directly from Sri Lankan farms and manufacturers, ensuring genuine quality and traditional formulations.' },
+                            { icon: Package, title: 'Reliable Supply Chain', desc: 'Consistent product availability with efficient logistics and timely international delivery.' },
+                            { icon: DollarSign, title: 'Competitive Pricing', desc: 'Direct export prices that give you strong margins while maintaining premium quality.' },
+                            { icon: ScrollText, title: 'Complete Documentation', desc: 'All necessary export papers, certificates, and compliance documents provided.' },
+                            { icon: Microscope, title: 'Lab Tested', desc: 'Every batch undergoes rigorous quality testing to ensure safety and effectiveness.' },
+                            { icon: Star, title: 'Ongoing Support', desc: 'Dedicated account management and technical support for all our distribution partners.' }
+                        ].map((item, index) => {
+                            const Icon = item.icon
+                            return (
+                                <motion.div
+                                    key={index}
+                                    variants={cardVariants}
+                                    whileHover={{ y: -8, scale: 1.03 }}
+                                    className="bg-beige/30 rounded-xl p-6 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-br from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="mb-4 relative z-10 text-gold transform group-hover:scale-110 transition-transform duration-300">
+                                        <Icon size={40} strokeWidth={1.5} />
+                                    </div>
+                                    <h4 className="text-xl font-semibold text-gray-900 mb-3 relative z-10">{item.title}</h4>
+                                    <p className="text-gray-700 relative z-10">{item.desc}</p>
+                                </motion.div>
+                            )
+                        })}
                     </motion.div>
                 </div>
             </section>
