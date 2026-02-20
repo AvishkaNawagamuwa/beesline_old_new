@@ -16,6 +16,13 @@ import margosa from "./images/products/margosa.png";
 import moringa from "./images/products/moringa.png";
 import papayaLeaves from "./images/products/papaya-leaves.png";
 
+// Slider images from assets folder
+import slider1 from "../../../assets/images/sliders/Whisk_0b34952c6a96f3a95ff4affc525cbe6fdr.png";
+import slider2 from "../../../assets/images/sliders/Whisk_3cd72eb9cbaa605ac0c45b9f252e227edr.png";
+import slider3 from "../../../assets/images/sliders/Whisk_8405657d76319fbaebd4cd80c570476edr.png";
+import slider4 from "../../../assets/images/sliders/Whisk_ee7e476c41ea12cb8c34022094b29d24dr.png";
+import slider5 from "../../../assets/images/sliders/Whisk_f5f21708a8c55db81f048f54b9f7907edr.png";
+
 const images = {
     logo1,
     certificates: {
@@ -35,6 +42,13 @@ const images = {
         margosa,
         moringa,
         papayaLeaves,
+    },
+    sliders: {
+        slider1,
+        slider2,
+        slider3,
+        slider4,
+        slider5,
     },
 };
 

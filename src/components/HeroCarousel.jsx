@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation, EffectFade, Parallax } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import images from '../assets/images'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -57,7 +58,7 @@ export default function HeroCarousel() {
                 { text: 'View Certifications', link: '/quality', primary: true },
                 { text: 'Partner With Us', link: '/partners', primary: false }
             ],
-            bgImage: '/assets/images/sliders/Whisk_0b34952c6a96f3a95ff4affc525cbe6fdr.png',
+            bgImage: images.sliders.slider1,
         },
         {
             id: 2,
@@ -68,7 +69,7 @@ export default function HeroCarousel() {
                 { text: 'Explore Products', link: '/products', primary: true },
                 { text: 'Request Export', link: '/request-export', primary: false }
             ],
-            bgImage: '/assets/images/sliders/Whisk_3cd72eb9cbaa605ac0c45b9f252e227edr.png',
+            bgImage: images.sliders.slider2,
         },
         {
             id: 3,
@@ -79,7 +80,7 @@ export default function HeroCarousel() {
                 { text: 'Quality & Certifications', link: '/quality', primary: true },
                 { text: 'Contact Us', link: '/contact', primary: false }
             ],
-            bgImage: '/assets/images/sliders/Whisk_8405657d76319fbaebd4cd80c570476edr.png',
+            bgImage: images.sliders.slider3,
         },
         {
             id: 4,
@@ -90,7 +91,7 @@ export default function HeroCarousel() {
                 { text: 'Our Products', link: '/products', primary: true },
                 { text: 'About Us', link: '/about', primary: false }
             ],
-            bgImage: '/assets/images/sliders/Whisk_ee7e476c41ea12cb8c34022094b29d24dr.png',
+            bgImage: images.sliders.slider4,
         },
         {
             id: 5,
@@ -101,7 +102,7 @@ export default function HeroCarousel() {
                 { text: 'Become a Partner', link: '/partners', primary: true },
                 { text: 'Request Quote', link: '/request-export', primary: false }
             ],
-            bgImage: '/assets/images/sliders/Whisk_f5f21708a8c55db81f048f54b9f7907edr.png',
+            bgImage: images.sliders.slider5,
         }
     ]
 
