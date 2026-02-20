@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-export default function ProductCard({ product, onQuickView }) {
+export default function ProductCard({ product }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -9,7 +9,7 @@ export default function ProductCard({ product, onQuickView }) {
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-xl shadow-md overflow-hidden group card-hover"
+            className="bg-white rounded-xl shadow-md overflow-hidden group card-hover h-full flex flex-col"
         >
             {/* Image Container */}
             <Link to={`/products/${product.slug}`} className="block relative overflow-hidden bg-beige aspect-square">
@@ -26,7 +26,7 @@ export default function ProductCard({ product, onQuickView }) {
             </Link>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
                 <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider mb-2">
                     {product.category}
                 </span>
@@ -55,21 +55,13 @@ export default function ProductCard({ product, onQuickView }) {
                     </span>
                 </div>
 
-                {/* Buttons */}
-                <div className="flex gap-2">
-                    <button
-                        onClick={() => onQuickView(product)}
-                        className="flex-1 btn-outline text-sm py-2"
-                    >
-                        Quick View
-                    </button>
-                    <Link
-                        to={`/products/${product.slug}`}
-                        className="flex-1 btn-primary text-sm py-2 text-center"
-                    >
-                        Details
-                    </Link>
-                </div>
+                {/* Button - pushed to bottom with mt-auto */}
+                <Link
+                    to={`/products/${product.slug}`}
+                    className="block w-full btn-primary text-sm py-3 text-center mt-auto"
+                >
+                    View Details
+                </Link>
             </div>
         </motion.div>
     )

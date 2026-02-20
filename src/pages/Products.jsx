@@ -1,20 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { SearchX, Package, Leaf, CheckCircle } from 'lucide-react'
 import Hero from '../components/Hero'
 import ProductCard from '../components/ProductCard'
-import ProductModal from '../components/ProductModal'
 import { products, categories, filterProductsByCategory } from '../data/products'
 
 export default function Products() {
     const [selectedCategory, setSelectedCategory] = useState('all')
     const [searchQuery, setSearchQuery] = useState('')
-    const [selectedProduct, setSelectedProduct] = useState(null)
-    const [isModalOpen, setIsModalOpen] = useState(false)
-
-    const handleQuickView = (product) => {
-        setSelectedProduct(product)
-        setIsModalOpen(true)
-    }
 
     const filteredProducts = filterProductsByCategory(selectedCategory).filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -97,7 +90,6 @@ export default function Products() {
                                 <ProductCard
                                     key={product.id}
                                     product={product}
-                                    onQuickView={handleQuickView}
                                 />
                             ))}
                         </div>
@@ -125,13 +117,6 @@ export default function Products() {
                     )}
                 </div>
             </section>
-
-            {/* Quick View Modal */}
-            <ProductModal
-                product={selectedProduct}
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-            />
 
             {/* Info Section */}
             <section className="py-16 bg-beige/30">

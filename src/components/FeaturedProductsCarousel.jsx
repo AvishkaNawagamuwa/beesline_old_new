@@ -1,32 +1,17 @@
-import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { getFeaturedProducts } from '../data/products'
-import ProductModal from './ProductModal'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
 
 export default function FeaturedProductsCarousel() {
-    const [selectedProduct, setSelectedProduct] = useState(null)
-    const [isModalOpen, setIsModalOpen] = useState(false)
     const featuredProducts = getFeaturedProducts()
 
-    const handleQuickView = (product) => {
-        setSelectedProduct(product)
-        setIsModalOpen(true)
-    }
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false)
-        setTimeout(() => setSelectedProduct(null), 300)
-    }
-
     return (
-        <>
             <div className="relative">
                 <Swiper
                     modules={[Autoplay, Navigation]}
@@ -38,6 +23,7 @@ export default function FeaturedProductsCarousel() {
                         disableOnInteraction: false,
                     }}
                     loop={true}
+                    watchSlidesProgress={true}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
@@ -55,11 +41,11 @@ export default function FeaturedProductsCarousel() {
                     className="featured-products-carousel"
                 >
                     {featuredProducts.map((product) => (
-                        <SwiperSlide key={product.id}>
+                        <SwiperSlide key={product.id} className="h-auto">
                             <motion.div
                                 whileHover={{ y: -6, scale: 1.02 }}
                                 transition={{ duration: 0.25 }}
-                                className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden h-full group"
+                                className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden h-full group flex flex-col"
                             >
                                 {/* Image Container */}
                                 <Link
@@ -81,13 +67,13 @@ export default function FeaturedProductsCarousel() {
                                 </Link>
 
                                 {/* Content */}
-                                <div className="p-6">
+                                <div className="p-6 flex flex-col flex-1">
                                     <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider mb-2">
                                         {product.category}
                                     </span>
 
                                     <Link to={`/products/${product.slug}`}>
-                                        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gold transition-colors line-clamp-2 min-h-[56px]">
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gold transition-colors line-clamp-2">
                                             {product.name}
                                         </h3>
                                     </Link>
@@ -106,13 +92,13 @@ export default function FeaturedProductsCarousel() {
                                         </span>
                                     </div>
 
-                                    {/* Quick View Button */}
-                                    <button
-                                        onClick={() => handleQuickView(product)}
-                                        className="w-full px-4 py-2.5 rounded-lg border-2 border-gold text-gold font-medium hover:bg-gold hover:text-white transition-all duration-300 hover:shadow-lg"
+                                    {/* View Details Button - pushed to bottom with mt-auto */}
+                                    <Link
+                                        to={`/products/${product.slug}`}
+                                        className="block w-full px-4 py-2.5 rounded-lg bg-gold text-white text-center font-medium hover:bg-primary-400 transition-all duration-300 hover:shadow-lg transform hover:scale-105 mt-auto"
                                     >
-                                        Quick View
-                                    </button>
+                                        View Details
+                                    </Link>
                                 </div>
                             </motion.div>
                         </SwiperSlide>
@@ -124,6 +110,11 @@ export default function FeaturedProductsCarousel() {
             --swiper-navigation-size: 14px;
             --swiper-navigation-color: #666;
             padding: 1rem 0;
+          }
+
+          .featured-products-carousel :global(.swiper-slide) {
+            height: auto;
+            display: flex;
           }
 
           .featured-products-carousel :global(.swiper-button-prev),
@@ -168,13 +159,5 @@ export default function FeaturedProductsCarousel() {
           }
         `}</style>
             </div>
-
-            {/* Product Modal */}
-            <ProductModal
-                product={selectedProduct}
-                isOpen={isModalOpen}
-                onClose={handleCloseModal}
-            />
-        </>
     )
 }

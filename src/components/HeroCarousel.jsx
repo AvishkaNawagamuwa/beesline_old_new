@@ -50,36 +50,58 @@ export default function HeroCarousel() {
     const slides = [
         {
             id: 1,
+            title: 'GMP-Certified & Trusted Global Export Partner',
+            subtitle: 'Bringing Sri Lankan Heritage to the World',
+            description: 'Reliable supply chain • Competitive pricing • Complete documentation',
+            buttons: [
+                { text: 'View Certifications', link: '/quality', primary: true },
+                { text: 'Partner With Us', link: '/partners', primary: false }
+            ],
+            bgImage: '/assets/images/sliders/Whisk_0b34952c6a96f3a95ff4affc525cbe6fdr.png',
+        },
+        {
+            id: 2,
             title: 'Premium Sri Lankan Herbal Products',
             subtitle: "Nature's Wisdom Meets Modern Wellness",
             description: 'Authentic Ayurvedic formulations for global distribution',
             buttons: [
                 { text: 'Explore Products', link: '/products', primary: true },
-                { text: 'Become a Partner', link: '/partners', primary: false }
+                { text: 'Request Export', link: '/request-export', primary: false }
             ],
-            bgImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&q=80',
-        },
-        {
-            id: 2,
-            title: 'GMP Certified Manufacturing',
-            subtitle: 'International Quality Standards',
-            description: 'ISO 22000 | HACCP | GMP Aligned Processes',
-            buttons: [
-                { text: 'View Certifications', link: '/quality', primary: true },
-                { text: 'Request Export Quote', link: '/request-export', primary: false }
-            ],
-            bgImage: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80',
+            bgImage: '/assets/images/sliders/Whisk_3cd72eb9cbaa605ac0c45b9f252e227edr.png',
         },
         {
             id: 3,
-            title: 'Trusted Global Export Partner',
-            subtitle: 'Bringing Sri Lankan Heritage to the World',
-            description: 'Reliable supply chain • Competitive pricing • Complete documentation',
+            title: 'ISO 22000 | HACCP | GMP Certification',
+            subtitle: 'International Quality Standards',
+            description: 'GMP-certified manufacturing ensuring safety and excellence',
             buttons: [
-                { text: 'Partner With Us', link: '/partners', primary: true },
+                { text: 'Quality & Certifications', link: '/quality', primary: true },
                 { text: 'Contact Us', link: '/contact', primary: false }
             ],
-            bgImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+            bgImage: '/assets/images/sliders/Whisk_8405657d76319fbaebd4cd80c570476edr.png',
+        },
+        {
+            id: 4,
+            title: 'Traditional Ayurvedic Excellence',
+            subtitle: 'Pure Herbal Solutions for Global Markets',
+            description: '100% Natural • GMP Certified • Export Ready',
+            buttons: [
+                { text: 'Our Products', link: '/products', primary: true },
+                { text: 'About Us', link: '/about', primary: false }
+            ],
+            bgImage: '/assets/images/sliders/Whisk_ee7e476c41ea12cb8c34022094b29d24dr.png',
+        },
+        {
+            id: 5,
+            title: 'Your Reliable Export Partner',
+            subtitle: 'Building Global Partnerships',
+            description: 'Comprehensive support • Quality assurance • Timely delivery',
+            buttons: [
+                { text: 'Become a Partner', link: '/partners', primary: true },
+                { text: 'Request Quote', link: '/request-export', primary: false }
+            ],
+            bgImage: '/assets/images/sliders/Whisk_f5f21708a8c55db81f048f54b9f7907edr.png',
         }
     ]
 
@@ -114,11 +136,11 @@ export default function HeroCarousel() {
                                 }}
                             />
 
-                            {/* Subtle Overlay for Readability - Much Lighter */}
+                            {/* Overlay for Better Text Readability */}
                             <div
                                 className="absolute inset-0"
                                 style={{
-                                    background: 'linear-gradient(135deg, rgba(76, 84, 47, 0.45) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(76, 84, 47, 0.45) 100%)',
+                                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5) 100%)',
                                 }}
                             />
 
@@ -132,7 +154,7 @@ export default function HeroCarousel() {
                                         variants={titleVariants}
                                         data-swiper-parallax="-300"
                                     >
-                                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}>
+                                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
                                             {slide.title}
                                         </h1>
                                     </motion.div>
@@ -144,10 +166,10 @@ export default function HeroCarousel() {
                                         variants={subtitleVariants}
                                         data-swiper-parallax="-200"
                                     >
-                                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-3 sm:mb-4 font-semibold" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.25)' }}>
+                                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gold mb-3 sm:mb-4 font-bold drop-shadow-xl">
                                             {slide.subtitle}
                                         </p>
-                                        <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 md:mb-12 font-medium" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.2)' }}>
+                                        <p className="text-base sm:text-lg md:text-xl text-white/95 mb-8 sm:mb-10 md:mb-12 font-medium drop-shadow-lg">
                                             {slide.description}
                                         </p>
                                     </motion.div>
@@ -169,8 +191,8 @@ export default function HeroCarousel() {
                                                 <Link
                                                     to={button.link}
                                                     className={`inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-2xl ${button.primary
-                                                        ? 'bg-white text-gold hover:bg-cream hover:shadow-gold/50'
-                                                        : 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-gold backdrop-blur-sm'
+                                                        ? 'bg-gold text-white hover:bg-primary-400 hover:shadow-gold/60'
+                                                        : 'bg-white/10 backdrop-blur-md border-2 border-white text-white hover:bg-white hover:text-gold'
                                                         }`}
                                                 >
                                                     {button.text}
