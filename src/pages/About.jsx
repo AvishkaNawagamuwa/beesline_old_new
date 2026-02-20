@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
+import images from '../assets/images'
 
 export default function About() {
     return (
@@ -11,13 +12,13 @@ export default function About() {
             />
 
             {/* Our Story Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Our Story</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -49,7 +50,7 @@ export default function About() {
                         >
                             <div className="aspect-square bg-beige rounded-2xl overflow-hidden shadow-xl">
                                 <img
-                                    src="/assets/images/products/garcinia.png"
+                                    src={images.products.garcinia}
                                     alt="Sri Lankan Herbs"
                                     className="w-full h-full object-contain p-8"
                                 />
@@ -60,7 +61,7 @@ export default function About() {
             </section>
 
             {/* Mission & Vision */}
-            <section className="py-20 bg-beige/30">
+            <section className="py-12 bg-beige/30">
                 <div className="container-custom">
                     <div className="grid md:grid-cols-2 gap-8">
                         <motion.div
@@ -100,13 +101,13 @@ export default function About() {
             </section>
 
             {/* Core Values */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Our Core Values</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -170,7 +171,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Why Work With Us</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import images from '../assets/images'
 
 export default function LoadingScreen() {
     const [loading, setLoading] = useState(true)
@@ -29,7 +30,7 @@ export default function LoadingScreen() {
                         className="mb-6"
                     >
                         <img
-                            src="/assets/images/logo1.png"
+                            src={images.logo1}
                             alt="Bees Line Exports Logo"
                             className="w-32 h-32 md:w-40 md:h-40 object-contain"
                             style={{ mixBlendMode: 'multiply' }}

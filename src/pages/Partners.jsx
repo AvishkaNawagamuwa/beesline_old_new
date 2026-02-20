@@ -12,13 +12,13 @@ export default function Partners() {
             />
 
             {/* Why Partner Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Why Partner With Us</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -78,13 +78,13 @@ export default function Partners() {
             </section>
 
             {/* Partnership Process */}
-            <section className="py-20 bg-beige/30">
+            <section className="py-12 bg-beige/30">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">How to Become a Partner</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -93,7 +93,7 @@ export default function Partners() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                         {[
                             {
                                 step: '1',
@@ -142,13 +142,13 @@ export default function Partners() {
             </section>
 
             {/* Who We're Looking For */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Ideal Partner Profile</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -211,32 +211,35 @@ export default function Partners() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-gold/90 to-primary-400/90 text-white">
-                <div className="container-custom text-center">
+            <section className="py-12 bg-white">
+                <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
+                        className="bg-gradient-to-r from-gold/10 via-primary-100/10 to-gold/10 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Ready to Grow Your Business?
-                        </h2>
-                        <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
-                            Join successful distributors worldwide who trust Bees Line Exports for premium herbal products
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                to="/request-export"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-white text-gold font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
-                            >
-                                Request Partnership
-                            </Link>
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-gold transition-all"
-                            >
-                                Contact Us
-                            </Link>
+                        <div className="absolute inset-0 opacity-5">
+                            <div className="absolute inset-0" style={{
+                                backgroundImage: 'radial-gradient(circle, #D4AF37 1px, transparent 1px)',
+                                backgroundSize: '30px 30px'
+                            }}></div>
+                        </div>
+                        <div className="relative z-10">
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                                Ready to Grow Your Business?
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                                Join successful distributors worldwide who trust Bees Line Exports for premium herbal products
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link to="/request-export" className="btn-primary">
+                                    Request Partnership
+                                </Link>
+                                <Link to="/contact" className="btn-secondary">
+                                    Contact Us
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

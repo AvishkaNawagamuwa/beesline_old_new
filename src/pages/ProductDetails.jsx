@@ -37,7 +37,7 @@ export default function ProductDetails() {
             </div>
 
             {/* Product Hero */}
-            <section className="py-12">
+            <section className="py-8">
                 <div className="container-custom">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Image */}
@@ -96,7 +96,7 @@ export default function ProductDetails() {
                             </div>
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <Link to="/request-export" className="btn-primary flex-1 text-center">
                                     Request Export Quotation
                                 </Link>
@@ -124,7 +124,7 @@ export default function ProductDetails() {
             </section>
 
             {/* Product Details Sections */}
-            <section className="py-16 bg-beige/20">
+            <section className="py-10 bg-beige/20">
                 <div className="container-custom">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Overview */}
@@ -189,9 +189,9 @@ export default function ProductDetails() {
             </section>
 
             {/* Quality & Certifications */}
-            <section className="py-16 bg-white">
+            <section className="py-10 bg-white">
                 <div className="container-custom">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-8">
                         <h2 className="section-title">Quality & Certifications</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
                         <p className="section-subtitle">Internationally recognized standards ensuring premium quality</p>
@@ -221,7 +221,7 @@ export default function ProductDetails() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-gradient-to-r from-gold/90 to-primary-400/90 text-white">
+            <section className="py-10 bg-gradient-to-r from-gold/90 to-primary-400/90 text-white">
                 <div className="container-custom text-center">
                     <h2 className="text-3xl font-bold mb-6">Interested in This Product?</h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">

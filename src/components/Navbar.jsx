@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import images from '../assets/images'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link to="/" className="flex items-center group">
                         <img
-                            src="/assets/images/logo1.png"
+                            src={images.logo1}
                             alt="Bees Line Exports Logo"
                             className="h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                             style={{ mixBlendMode: 'multiply' }}

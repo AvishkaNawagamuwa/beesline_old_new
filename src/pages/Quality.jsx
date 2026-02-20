@@ -28,13 +28,13 @@ export default function Quality() {
             />
 
             {/* Certifications Grid Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Our Certifications</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -64,13 +64,13 @@ export default function Quality() {
             </section>
 
             {/* Quality Commitment Section */}
-            <section className="py-20 bg-beige/30">
+            <section className="py-12 bg-beige/30">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Our Quality Commitment</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -107,13 +107,13 @@ export default function Quality() {
             </section>
 
             {/* Quality Process */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Our Quality Process</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>

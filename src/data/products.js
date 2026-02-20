@@ -1,3 +1,5 @@
+import images from '../assets/images'
+
 // Central product data for Bees Line Exports
 export const products = [
     {
@@ -9,7 +11,7 @@ export const products = [
         categories: ['wellness', 'vitality'],
         tagline: 'Ancient adaptogen for stress relief, energy boost, and overall vitality',
         description: 'Ashwagandha, also known as Indian Ginseng, is a powerful adaptogenic herb used in Ayurvedic medicine for over 3,000 years. Our premium Ashwagandha capsules are formulated to help reduce stress and anxiety, boost energy levels, improve sleep quality, and enhance overall well-being. Perfect for distributors seeking high-quality herbal supplements for health-conscious consumers.',
-        image: '/assets/images/products/ashwagandha.png',
+        image: images.products.ashwagandha,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -35,7 +37,7 @@ export const products = [
         categories: ['weight-management'],
         tagline: 'Natural weight management solution for appetite control and fat reduction',
         description: 'Garcinia Cambogia is a tropical fruit native to Southeast Asia, renowned for its weight management properties. Our Garcinia capsules contain high-quality HCA (Hydroxycitric Acid) to support healthy weight loss, reduce appetite, and promote fat metabolism. Ideal for distributors targeting the growing wellness and weight management market.',
-        image: '/assets/images/products/garcinia.png',
+        image: images.products.garcinia,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -61,7 +63,7 @@ export const products = [
         categories: ['weight-management', 'vitality'],
         tagline: 'Natural weight loss and metabolism booster with powerful antioxidants',
         description: 'Green Coffee Bean extract is rich in chlorogenic acid, a powerful antioxidant that supports weight loss and metabolic health. Our premium Green Coffee capsules help boost metabolism, burn fat, and provide sustained energy without the jitters. An excellent choice for distributors in the weight management and wellness space.',
-        image: '/assets/images/products/green-coffee.png',
+        image: images.products.greenCoffee,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -87,7 +89,7 @@ export const products = [
         categories: ['wellness', 'vitality'],
         tagline: 'Nutrient-dense superfood for complete nutrition, immunity, and vitality',
         description: 'Moringa, known as the Miracle Tree, is packed with vitamins, minerals, and antioxidants. Our Moringa capsules provide comprehensive nutritional support, boost immunity, improve digestion, and promote overall health and wellness. A must-have product for distributors in the superfood and nutrition supplement market.',
-        image: '/assets/images/products/moringa.png',
+        image: images.products.moringa,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -113,7 +115,7 @@ export const products = [
         categories: ['skin', 'wellness'],
         tagline: 'Natural detoxifier for clear skin, immunity, and overall wellness',
         description: 'Margosa (Neem) has been valued in Ayurvedic medicine for its powerful purifying and detoxifying properties. Our Margosa capsules support clear skin, boost immunity, and promote overall health. Perfect for distributors seeking natural beauty and wellness solutions.',
-        image: '/assets/images/products/margosa.png',
+        image: images.products.margosa,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -139,7 +141,7 @@ export const products = [
         categories: ['digestive'],
         tagline: 'Natural digestive support and platelet booster from tropical wellness',
         description: 'Papaya Leaves are renowned for their digestive enzymes and platelet-boosting properties. Our Papaya Leaves capsules support healthy digestion, boost platelet count, and enhance overall wellness. An essential product for distributors in digestive health and natural remedies.',
-        image: '/assets/images/products/papaya-leaves.png',
+        image: images.products.papayaLeaves,
         mg: 500,
         capsules: 60,
         benefits: [
@@ -165,7 +167,7 @@ export const products = [
         categories: ['digestive', 'wellness'],
         tagline: 'Traditional Sri Lankan herb for digestive health and overall vitality',
         description: 'Heenbovitiya (Osbeckia octandra) is a traditional Sri Lankan medicinal plant used for centuries to support digestive health and overall wellness. Our Heenbovitiya capsules offer natural digestive support and help maintain optimal health. A unique offering for distributors seeking authentic Sri Lankan herbal products.',
-        image: '/assets/images/products/heenbovitiya.png',
+        image: images.products.heenbovitiya,
         mg: 500,
         capsules: 60,
         benefits: [

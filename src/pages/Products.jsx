@@ -30,10 +30,10 @@ export default function Products() {
                 bgImage="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1920&auto=format&fit=crop"
             />
 
-            <section className="py-16">
+            <section className="py-10">
                 <div className="container-custom">
                     {/* Search and Filter Controls */}
-                    <div className="mb-12">
+                    <div className="mb-8">
                         <div className="flex flex-col lg:flex-row gap-4 mb-8">
                             {/* Search Box */}
                             <div className="flex-1">

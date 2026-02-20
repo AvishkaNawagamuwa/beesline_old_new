@@ -1,3 +1,5 @@
+import images from '../assets/images'
+
 // Certificate data for Bees Line Exports
 export const certificates = [
     {
@@ -5,7 +7,7 @@ export const certificates = [
         title: 'GMP Certified',
         shortDescription: 'Good Manufacturing Practice compliance',
         fullDescription: 'Good Manufacturing Practice compliance supporting consistent production quality for export markets. Our GMP certification ensures that every product is manufactured to the highest international standards.',
-        image: '/assets/images/certificates/gmp.png',
+        image: images.certificates.gmp,
         badge: 'Core Standard',
         featured: true
     },
@@ -14,7 +16,7 @@ export const certificates = [
         title: 'HACCP Certified',
         shortDescription: 'Hazard Analysis and Critical Control Points',
         fullDescription: 'Hazard Analysis and Critical Control Points system to ensure food safety during manufacturing and handling. This certification demonstrates our commitment to identifying and controlling potential food safety hazards.',
-        image: '/assets/images/certificates/haccp.png',
+        image: images.certificates.haccp,
         badge: 'Food Safety',
         featured: true
     },
@@ -23,7 +25,7 @@ export const certificates = [
         title: 'IAF Recognition',
         shortDescription: 'International Accreditation Forum',
         fullDescription: 'International recognition supporting credibility of certification and assessment standards. IAF membership ensures our certifications are recognized globally, facilitating international trade.',
-        image: '/assets/images/certificates/ilac.png',
+        image: images.certificates.ilac,
         badge: 'International',
         featured: false
     },
@@ -32,7 +34,7 @@ export const certificates = [
         title: 'ISO 22000 Certified',
         shortDescription: 'Food Safety Management System',
         fullDescription: 'Food Safety Management System standard aligned with international requirements for safe production. ISO 22000 combines HACCP and quality management principles to ensure comprehensive food safety.',
-        image: '/assets/images/certificates/iso-22000.png',
+        image: images.certificates.iso22000,
         badge: 'ISO Standard',
         featured: true
     },
@@ -41,7 +43,7 @@ export const certificates = [
         title: '100% Natural Product',
         shortDescription: 'Natural ingredients focus',
         fullDescription: 'Products are developed with a strong focus on natural ingredients and careful processing. We maintain the integrity of traditional herbal formulations while meeting modern quality standards.',
-        image: '/assets/images/certificates/natural.png',
+        image: images.certificates.natural,
         badge: 'Natural',
         featured: false
     },
@@ -50,7 +52,7 @@ export const certificates = [
         title: 'URS – ISO Registration',
         shortDescription: 'ISO accredited certification',
         fullDescription: 'Registration/assessment evidence through accredited certification bodies for ISO-related requirements. This demonstrates our commitment to maintaining internationally recognized quality management systems.',
-        image: '/assets/images/certificates/urs-iso.png',
+        image: images.certificates.ursIso,
         badge: 'Accredited',
         featured: false
     },
@@ -59,7 +61,7 @@ export const certificates = [
         title: 'URS – UKAS Management Systems',
         shortDescription: 'UKAS management certification',
         fullDescription: 'UKAS-related management system recognition supporting international trust and compliance. This UK-based accreditation ensures our management systems meet the highest global standards.',
-        image: '/assets/images/certificates/urs-ukas.png',
+        image: images.certificates.ursUkas,
         badge: 'UK Accredited',
         featured: false
     }

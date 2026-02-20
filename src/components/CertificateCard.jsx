@@ -12,11 +12,11 @@ export default function CertificateCard({ certificate, onClick }) {
             className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer group card-hover"
         >
             {/* Image Container */}
-            <div className="relative bg-gradient-to-br from-beige/50 to-white p-8 aspect-square flex items-center justify-center">
+            <div className="relative bg-gradient-to-br from-beige/50 to-white p-4 aspect-square flex items-center justify-center">
                 <img
                     src={certificate.image}
                     alt={certificate.title}
-                    className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                         e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect fill="%23f5f1e8" width="200" height="200"/%3E%3Ctext x="50%25" y="50%25" font-size="16" text-anchor="middle" dy=".3em" fill="%23999"%3ECertificate%3C/text%3E%3C/svg%3E'
                     }}

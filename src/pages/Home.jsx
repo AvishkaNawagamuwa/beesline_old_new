@@ -42,14 +42,14 @@ export default function Home() {
             <HeroCarousel />
 
             {/* Who We Are Section */}
-            <section className="py-20 bg-gradient-to-br from-white via-beige/10 to-white">
+            <section className="py-12 bg-gradient-to-br from-white via-beige/10 to-white">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: '-100px' }}
                         variants={fadeInUp}
-                        className="text-center mb-20"
+                        className="text-center mb-12"
                     >
                         <h2 className="section-title">Who We Are</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -64,7 +64,7 @@ export default function Home() {
                         whileInView="visible"
                         viewport={{ once: true, margin: '-100px' }}
                         variants={staggerContainer}
-                        className="grid md:grid-cols-2 gap-12 mb-20 items-center"
+                        className="grid md:grid-cols-2 gap-12 mb-12 items-center"
                     >
                         {/* Left Column - Company Story */}
                         <motion.div variants={fadeInUp} className="space-y-6">
@@ -168,14 +168,14 @@ export default function Home() {
             </section>
 
             {/* Featured Products Carousel Section */}
-            <section className="py-20 bg-gradient-to-br from-beige/20 to-cream/30">
+            <section className="py-12 bg-gradient-to-br from-beige/20 to-cream/30">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: '-100px' }}
                         variants={fadeInUp}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Featured Products</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -211,14 +211,14 @@ export default function Home() {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: '-100px' }}
                         variants={fadeInUp}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Why Choose Bees Line Exports</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -256,14 +256,14 @@ export default function Home() {
             </section>
 
             {/* Quality & Certifications Section */}
-            <section className="py-20 bg-gradient-to-br from-cream/40 to-beige/20">
+            <section className="py-12 bg-gradient-to-br from-cream/40 to-beige/20">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: '-100px' }}
                         variants={fadeInUp}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <h2 className="section-title">Quality & Certifications</h2>
                         <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
@@ -334,7 +334,7 @@ export default function Home() {
             </section>
 
             {/* Partners CTA Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"

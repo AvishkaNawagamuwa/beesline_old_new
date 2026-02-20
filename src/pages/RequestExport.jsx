@@ -107,9 +107,10 @@ ${formData.message}
             <Hero
                 title="Request Export Quotation"
                 subtitle="Partner with us to bring premium Sri Lankan herbal products to your market"
+                bgImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop"
             />
 
-            <section className="py-20 bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Form */}
