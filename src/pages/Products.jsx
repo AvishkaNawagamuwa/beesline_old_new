@@ -4,6 +4,7 @@ import { SearchX, Package, Leaf, CheckCircle } from 'lucide-react'
 import Hero from '../components/Hero'
 import ProductCard from '../components/ProductCard'
 import { products, categories, filterProductsByCategory } from '../data/products'
+import images from '../assets/images'
 
 export default function Products() {
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -20,7 +21,7 @@ export default function Products() {
             <Hero
                 title="Our Premium Product Range"
                 subtitle="GMP-certified herbal capsules for stress relief, weight management, and optimal wellness"
-                bgImage="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1920&auto=format&fit=crop"
+                bgImage={images.hero.product}
             />
 
             <section className="py-10">

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Hero from '../components/Hero'
+import images from '../assets/images'
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ export default function Contact() {
                 name: '',
                 email: '',
                 phone: '',
-                company: '',
+                company: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop',
                 country: '',
                 subject: 'General Inquiry',
                 message: ''
@@ -74,7 +75,7 @@ export default function Contact() {
             <Hero
                 title="Contact Us"
                 subtitle="We're here to answer your questions and support your business"
-                bgImage="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop"
+                bgImage={images.hero.contact}
             />
 
             <section className="py-12 bg-white">

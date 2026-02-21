@@ -9,7 +9,7 @@ export default function About() {
             <Hero
                 title="About Us"
                 subtitle="Bridging Sri Lankan Herbal Heritage with Global Wellness Markets"
-                bgImage="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&q=80"
+                bgImage={images.hero.about}
             />
 
             {/* Our Story Section */}

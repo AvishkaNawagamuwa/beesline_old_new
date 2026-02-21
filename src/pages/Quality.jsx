@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import CertificateCard from '../components/CertificateCard'
 import CertificateModal from '../components/CertificateModal'
 import { certificates, qualityCommitments } from '../data/certificates'
+import images from '../assets/images'
 
 export default function Quality() {
     const [selectedCertificate, setSelectedCertificate] = useState(null)
@@ -24,7 +25,7 @@ export default function Quality() {
             <Hero
                 title="Quality & Certifications"
                 subtitle="Internationally aligned manufacturing and safety standards for export markets"
-                bgImage="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80"
+                bgImage={images.hero.quality}
             />
 
             {/* Certifications Grid Section */}

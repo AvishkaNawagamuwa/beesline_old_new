@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { DollarSign, Package, Target, Handshake, ClipboardList, Star } from 'lucide-react'
 import Hero from '../components/Hero'
+import images from '../assets/images'
 
 export default function Partners() {
     return (
@@ -9,7 +10,7 @@ export default function Partners() {
             <Hero
                 title="Partner With Us"
                 subtitle="Join our growing network of international distributors"
-                bgImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
+                bgImage={images.hero.patners}
             />
 
             {/* Why Partner Section */}

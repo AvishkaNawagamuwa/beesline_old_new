@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Hero from '../components/Hero'
+import images from '../assets/images'
 
 export default function RequestExport() {
     const [formData, setFormData] = useState({
@@ -101,7 +102,7 @@ export default function RequestExport() {
             <Hero
                 title="Request Export Quotation"
                 subtitle="Partner with us to bring premium Sri Lankan herbal products to your market"
-                bgImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop"
+                bgImage={images.hero.export}
             />
 
             <section className="py-12 bg-white">

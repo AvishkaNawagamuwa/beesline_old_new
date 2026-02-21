@@ -16,12 +16,20 @@ import margosa from "./images/products/margosa.png";
 import moringa from "./images/products/moringa.png";
 import papayaLeaves from "./images/products/papaya-leaves.png";
 
-// Slider images from assets folder
-import slider1 from "../../../assets/images/sliders/Whisk_0b34952c6a96f3a95ff4affc525cbe6fdr.png";
-import slider2 from "../../../assets/images/sliders/Whisk_3cd72eb9cbaa605ac0c45b9f252e227edr.png";
-import slider3 from "../../../assets/images/sliders/Whisk_8405657d76319fbaebd4cd80c570476edr.png";
-import slider4 from "../../../assets/images/sliders/Whisk_ee7e476c41ea12cb8c34022094b29d24dr.png";
-import slider5 from "../../../assets/images/sliders/Whisk_f5f21708a8c55db81f048f54b9f7907edr.png";
+// Slider images
+import slider1 from "./images/sliders/Whisk_0b34952c6a96f3a95ff4affc525cbe6fdr.png";
+import slider2 from "./images/sliders/Whisk_3cd72eb9cbaa605ac0c45b9f252e227edr.png";
+import slider3 from "./images/sliders/Whisk_8405657d76319fbaebd4cd80c570476edr.png";
+import slider4 from "./images/sliders/Whisk_ee7e476c41ea12cb8c34022094b29d24dr.png";
+import slider5 from "./images/sliders/Whisk_f5f21708a8c55db81f048f54b9f7907edr.png";
+
+// Hero/Page images
+import aboutHero from "./images/sliders/about.png";
+import contactHero from "./images/sliders/contact.png";
+import exportHero from "./images/sliders/export.png";
+import patnersHero from "./images/sliders/patners.png";
+import productHero from "./images/sliders/product.png";
+import qualityHero from "./images/sliders/quality.png";
 
 const images = {
     logo1,
@@ -49,6 +57,14 @@ const images = {
         slider3,
         slider4,
         slider5,
+    },
+    hero: {
+        about: aboutHero,
+        contact: contactHero,
+        export: exportHero,
+        patners: patnersHero,
+        product: productHero,
+        quality: qualityHero,
     },
 };
 
