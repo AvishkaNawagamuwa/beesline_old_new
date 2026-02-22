@@ -4,29 +4,14 @@ import images from '../assets/images'
 
 export default function LoadingScreen() {
     const [loading, setLoading] = useState(true)
-    const [progress, setProgress] = useState(0)
 
     useEffect(() => {
-        // Smooth progress animation
-        const progressInterval = setInterval(() => {
-            setProgress((prev) => {
-                if (prev >= 100) {
-                    clearInterval(progressInterval)
-                    return 100
-                }
-                // Accelerate towards the end
-                const increment = prev < 70 ? 2 : prev < 90 ? 3 : 5
-                return Math.min(prev + increment, 100)
-            })
-        }, 30)
-
-        // Hide loading screen when complete
+        // Hide loading screen after animation
         const timer = setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 3000)
 
         return () => {
-            clearInterval(progressInterval)
             clearTimeout(timer)
         }
     }, [])
@@ -37,111 +22,209 @@ export default function LoadingScreen() {
                 <motion.div
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-cream via-white to-beige"
+                    transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white overflow-hidden"
                 >
-                    {/* Logo */}
-                    <motion.div
-                        initial={{ scale: 0.5, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.6, ease: 'easeOut' }}
-                        className="mb-8"
-                    >
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gold/10 rounded-full blur-3xl"></div>
-                            <img
-                                src={images.logo1}
-                                alt="Bees Line Exports Logo"
-                                className="w-32 h-32 md:w-40 md:h-40 object-contain relative z-10"
-                                style={{ mixBlendMode: 'multiply' }}
+                    {/* Animated rays in background */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        {[...Array(12)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1 bg-gradient-to-t from-transparent via-gold/5 to-transparent"
+                                style={{
+                                    height: '40%',
+                                    transformOrigin: 'center center',
+                                    transform: `rotate(${i * 30}deg) translateY(-50%)`,
+                                }}
+                                animate={{
+                                    opacity: [0.3, 0.6, 0.3],
+                                    height: ['35%', '45%', '35%'],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    delay: i * 0.1,
+                                    ease: 'easeInOut',
+                                }}
                             />
+                        ))}
+                    </div>
+
+                    {/* Welcome Text */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="mb-8 md:mb-12 relative z-10"
+                    >
+                        <h2 className="text-2xl md:text-3xl font-light text-gray-600 tracking-widest">
+                            Welcome to
+                        </h2>
+                    </motion.div>
+
+                    {/* Diamond Container with Logo */}
+                    <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+                        className="relative mb-12 md:mb-16"
+                    >
+                        {/* Outer glow rings */}
+                        <motion.div
+                            className="absolute inset-0 flex items-center justify-center"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                        >
+                            <div className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] rounded-full border-2 border-gold/10"></div>
+                        </motion.div>
+
+                        <motion.div
+                            className="absolute inset-0 flex items-center justify-center"
+                            animate={{ rotate: -360 }}
+                            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                        >
+                            <div className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full border border-gold/5"></div>
+                        </motion.div>
+
+                        {/* Main diamond shape */}
+                        <div className="relative w-52 h-52 md:w-64 md:h-64 flex items-center justify-center">
+                            {/* Glowing background */}
+                            <motion.div
+                                className="absolute inset-0"
+                                animate={{
+                                    boxShadow: [
+                                        '0 0 40px 10px rgba(212, 175, 55, 0.3)',
+                                        '0 0 60px 20px rgba(212, 175, 55, 0.5)',
+                                        '0 0 40px 10px rgba(212, 175, 55, 0.3)',
+                                    ],
+                                }}
+                                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                                style={{
+                                    transform: 'rotate(45deg)',
+                                    background: 'linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(212, 175, 55, 0.2) 50%, rgba(255, 165, 0, 0.1) 100%)',
+                                    borderRadius: '20px',
+                                }}
+                            />
+
+                            {/* Diamond border */}
+                            <motion.div
+                                className="absolute inset-4 border-4"
+                                style={{
+                                    transform: 'rotate(45deg)',
+                                    borderRadius: '18px',
+                                }}
+                                animate={{
+                                    borderColor: ['#D4AF37', '#FFA500', '#D4AF37'],
+                                }}
+                                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                            />
+
+                            {/* Inner diamond glow */}
+                            <motion.div
+                                className="absolute inset-8"
+                                style={{
+                                    transform: 'rotate(45deg)',
+                                    background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(255, 165, 0, 0.15))',
+                                    borderRadius: '15px',
+                                }}
+                                animate={{
+                                    opacity: [0.5, 0.8, 0.5],
+                                }}
+                                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                            />
+
+                            {/* Logo */}
+                            <motion.div
+                                className="relative z-10"
+                                animate={{
+                                    scale: [1, 1.05, 1],
+                                }}
+                                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                            >
+                                <img
+                                    src={images.logo1}
+                                    alt="Bees Line Exports"
+                                    className="w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-2xl"
+                                    style={{ filter: 'drop-shadow(0 4px 20px rgba(212, 175, 55, 0.3))' }}
+                                />
+                            </motion.div>
                         </div>
                     </motion.div>
 
                     {/* Company Name */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.6 }}
-                        className="mb-12 text-center"
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        className="text-center relative z-10"
                     >
-                        <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                            <span className="text-gray-900">BEES LINE </span>
-                            <span className="text-gold">EXPORTS</span>
-                        </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-                    </motion.div>
-
-                    {/* Circular Spinner */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4, duration: 0.5 }}
-                        className="relative w-20 h-20 mb-8"
-                    >
-                        {/* Background circle */}
-                        <div className="absolute inset-0 rounded-full border-4 border-beige"></div>
-                        
-                        {/* Animated gradient circle */}
-                        <motion.div
-                            className="absolute inset-0 rounded-full"
-                            style={{
-                                background: 'conic-gradient(from 0deg, #D4AF37, #FFA500, #D4AF37)',
-                                WebkitMaskImage: 'radial-gradient(circle, transparent 50%, black 50%)',
-                                maskImage: 'radial-gradient(circle, transparent 50%, black 50%)',
-                            }}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                        />
-                        
-                        {/* Center dot */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gold rounded-full shadow-lg shadow-gold/50"></div>
-                    </motion.div>
-
-                    {/* Progress Bar */}
-                    <motion.div
-                        initial={{ opacity: 0, width: 0 }}
-                        animate={{ opacity: 1, width: '400px' }}
-                        transition={{ delay: 0.5, duration: 0.5 }}
-                        className="w-full max-w-md px-8 mb-6"
-                    >
-                        <div className="relative h-2 bg-beige rounded-full overflow-hidden shadow-inner">
-                            <motion.div
-                                className="absolute inset-y-0 left-0 rounded-full"
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-wider mb-2">
+                            <span 
+                                className="inline-block"
                                 style={{
-                                    background: 'linear-gradient(90deg, #FFA500 0%, #D4AF37 50%, #B8962E 100%)',
-                                    boxShadow: '0 2px 10px rgba(212, 175, 55, 0.4)',
+                                    background: 'linear-gradient(135deg, #4A4A4A 0%, #2C2C2C 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
                                 }}
-                                initial={{ width: '0%' }}
-                                animate={{ width: `${progress}%` }}
-                                transition={{ duration: 0.3, ease: 'easeOut' }}
-                            />
-                        </div>
-                        
-                        {/* Progress Text */}
-                        <div className="flex items-center justify-between mt-3 text-sm">
-                            <span className="text-gray-600 font-medium">LOADING</span>
-                            <motion.span
-                                className="text-gold font-bold text-lg"
-                                key={progress}
-                                initial={{ scale: 1.2 }}
-                                animate={{ scale: 1 }}
-                                transition={{ duration: 0.2 }}
                             >
-                                {progress}%
+                                BEES LINE
+                            </span>
+                            {' '}
+                            <motion.span
+                                className="inline-block"
+                                animate={{
+                                    textShadow: [
+                                        '0 0 20px rgba(212, 175, 55, 0.5)',
+                                        '0 0 30px rgba(255, 165, 0, 0.6)',
+                                        '0 0 20px rgba(212, 175, 55, 0.5)',
+                                    ],
+                                }}
+                                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                                style={{
+                                    background: 'linear-gradient(135deg, #FFA500 0%, #D4AF37 50%, #B8962E 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                }}
+                            >
+                                EXPORTS
                             </motion.span>
-                        </div>
+                        </h1>
+                        
+                        {/* Decorative line */}
+                        <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            transition={{ duration: 1, delay: 1.2 }}
+                            className="h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4"
+                        />
                     </motion.div>
 
-                    {/* Tagline */}
-                    <motion.p
+                    {/* Loading dots indicator */}
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                        className="text-gray-600 text-sm md:text-base font-medium tracking-wider uppercase"
+                        transition={{ delay: 1.5 }}
+                        className="absolute bottom-12 flex gap-2"
                     >
-                        Pure Ayurvedic Excellence
-                    </motion.p>
+                        {[0, 1, 2].map((i) => (
+                            <motion.div
+                                key={i}
+                                className="w-2 h-2 rounded-full bg-gold"
+                                animate={{
+                                    scale: [1, 1.5, 1],
+                                    opacity: [0.5, 1, 0.5],
+                                }}
+                                transition={{
+                                    duration: 1.5,
+                                    repeat: Infinity,
+                                    delay: i * 0.2,
+                                    ease: 'easeInOut',
+                                }}
+                            />
+                        ))}
+                    </motion.div>
                 </motion.div>
             )}
         </AnimatePresence>
